@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "EmailChannelRequest": {
+                    "description": "Email Channel Request",
+                    "properties": {
+                        "ConfigurationSet": {
+                            "description": "The configuration set that you want to use when you send email using the Pinpoint Email API.",
+                            "type": "string"
+                        },
+                        "Enabled": {
+                            "description": "If the channel is enabled for sending messages.",
+                            "type": "boolean"
+                        },
+                        "FromAddress": {
+                            "description": "The email address used to send emails from.",
+                            "type": "string"
+                        },
+                        "Identity": {
+                            "description": "The ARN of an identity verified with SES.",
+                            "type": "string"
+                        },
+                        "RoleArn": {
+                            "description": "The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "EmailChannelRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

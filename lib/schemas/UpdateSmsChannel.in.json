@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "SMSChannelRequest": {
+                    "description": "SMS Channel Request",
+                    "properties": {
+                        "Enabled": {
+                            "description": "If the channel is enabled for sending messages.",
+                            "type": "boolean"
+                        },
+                        "SenderId": {
+                            "description": "Sender identifier of your messages.",
+                            "type": "string"
+                        },
+                        "ShortCode": {
+                            "description": "ShortCode registered with phone provider.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "SMSChannelRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

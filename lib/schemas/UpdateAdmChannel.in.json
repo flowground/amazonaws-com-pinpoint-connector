@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ADMChannelRequest": {
+                    "description": "Amazon Device Messaging channel definition.",
+                    "properties": {
+                        "ClientId": {
+                            "description": "The Client ID that you obtained from the Amazon App Distribution Portal.",
+                            "type": "string"
+                        },
+                        "ClientSecret": {
+                            "description": "The Client Secret that you obtained from the Amazon App Distribution Portal.",
+                            "type": "string"
+                        },
+                        "Enabled": {
+                            "description": "Indicates whether or not the channel is enabled for sending messages.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "ADMChannelRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

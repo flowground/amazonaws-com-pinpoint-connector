@@ -1,0 +1,87 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "APNSVoipChannelRequest": {
+                    "description": "Apple VoIP Push Notification Service channel definition.",
+                    "properties": {
+                        "BundleId": {
+                            "description": "The bundle id used for APNs Tokens.",
+                            "type": "string"
+                        },
+                        "Certificate": {
+                            "description": "The distribution certificate from Apple.",
+                            "type": "string"
+                        },
+                        "DefaultAuthenticationMethod": {
+                            "description": "The default authentication method used for APNs.",
+                            "type": "string"
+                        },
+                        "Enabled": {
+                            "description": "If the channel is enabled for sending messages.",
+                            "type": "boolean"
+                        },
+                        "PrivateKey": {
+                            "description": "The certificate private key.",
+                            "type": "string"
+                        },
+                        "TeamId": {
+                            "description": "The team id used for APNs Tokens.",
+                            "type": "string"
+                        },
+                        "TokenKey": {
+                            "description": "The token key used for APNs Tokens.",
+                            "type": "string"
+                        },
+                        "TokenKeyId": {
+                            "description": "The token key used for APNs Tokens.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "APNSVoipChannelRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

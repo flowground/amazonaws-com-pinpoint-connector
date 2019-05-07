@@ -1,0 +1,769 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "WriteSegmentRequest": {
+                    "description": "Segment definition.",
+                    "properties": {
+                        "Dimensions": {
+                            "description": "The segment dimensions attributes.",
+                            "properties": {
+                                "Attributes": {
+                                    "description": "Custom segment attributes.",
+                                    "items": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "description": "Custom attibute dimension",
+                                                "properties": {
+                                                    "AttributeType": {
+                                                        "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                        "enum": [
+                                                            "INCLUSIVE",
+                                                            "EXCLUSIVE"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Values": {
+                                                        "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "Behavior": {
+                                    "description": "The segment behaviors attributes.",
+                                    "properties": {
+                                        "Recency": {
+                                            "description": "The recency of use.",
+                                            "properties": {
+                                                "Duration": {
+                                                    "description": "The length of time during which users have been active or inactive with your app.\n\nValid values: HR_24, DAY_7, DAY_14, DAY_30",
+                                                    "enum": [
+                                                        "HR_24",
+                                                        "DAY_7",
+                                                        "DAY_14",
+                                                        "DAY_30"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "RecencyType": {
+                                                    "description": "The recency dimension type:\n\nACTIVE - Users who have used your app within the specified duration are included in the segment.\n\nINACTIVE - Users who have not used your app within the specified duration are included in the segment.",
+                                                    "enum": [
+                                                        "ACTIVE",
+                                                        "INACTIVE"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "Demographic": {
+                                    "description": "The segment demographics attributes.",
+                                    "properties": {
+                                        "AppVersion": {
+                                            "description": "The app version criteria for the segment.",
+                                            "properties": {
+                                                "DimensionType": {
+                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                    "enum": [
+                                                        "INCLUSIVE",
+                                                        "EXCLUSIVE"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Values": {
+                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "Channel": {
+                                            "description": "The channel criteria for the segment.",
+                                            "properties": {
+                                                "DimensionType": {
+                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                    "enum": [
+                                                        "INCLUSIVE",
+                                                        "EXCLUSIVE"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Values": {
+                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "DeviceType": {
+                                            "description": "The device type criteria for the segment.",
+                                            "properties": {
+                                                "DimensionType": {
+                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                    "enum": [
+                                                        "INCLUSIVE",
+                                                        "EXCLUSIVE"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Values": {
+                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "Make": {
+                                            "description": "The device make criteria for the segment.",
+                                            "properties": {
+                                                "DimensionType": {
+                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                    "enum": [
+                                                        "INCLUSIVE",
+                                                        "EXCLUSIVE"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Values": {
+                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "Model": {
+                                            "description": "The device model criteria for the segment.",
+                                            "properties": {
+                                                "DimensionType": {
+                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                    "enum": [
+                                                        "INCLUSIVE",
+                                                        "EXCLUSIVE"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Values": {
+                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "Platform": {
+                                            "description": "The device platform criteria for the segment.",
+                                            "properties": {
+                                                "DimensionType": {
+                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                    "enum": [
+                                                        "INCLUSIVE",
+                                                        "EXCLUSIVE"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Values": {
+                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "Location": {
+                                    "description": "The segment location attributes.",
+                                    "properties": {
+                                        "Country": {
+                                            "description": "The country or region, in ISO 3166-1 alpha-2 format.",
+                                            "properties": {
+                                                "DimensionType": {
+                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                    "enum": [
+                                                        "INCLUSIVE",
+                                                        "EXCLUSIVE"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Values": {
+                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "GPSPoint": {
+                                            "description": "The GPS Point dimension.",
+                                            "properties": {
+                                                "Coordinates": {
+                                                    "description": "Coordinate to measure distance from.",
+                                                    "properties": {
+                                                        "Latitude": {
+                                                            "description": "Latitude",
+                                                            "format": "double",
+                                                            "type": "number"
+                                                        },
+                                                        "Longitude": {
+                                                            "description": "Longitude",
+                                                            "format": "double",
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "RangeInKilometers": {
+                                                    "description": "Range in kilometers from the coordinate.",
+                                                    "format": "double",
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "Metrics": {
+                                    "description": "Custom segment metrics.",
+                                    "items": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "description": "Custom metric dimension",
+                                                "properties": {
+                                                    "ComparisonOperator": {
+                                                        "description": "The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL",
+                                                        "type": "string"
+                                                    },
+                                                    "Value": {
+                                                        "description": "The value to be compared.",
+                                                        "format": "double",
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "UserAttributes": {
+                                    "description": "Custom segment user attributes.",
+                                    "items": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "description": "Custom attibute dimension",
+                                                "properties": {
+                                                    "AttributeType": {
+                                                        "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                        "enum": [
+                                                            "INCLUSIVE",
+                                                            "EXCLUSIVE"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Values": {
+                                                        "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "Name": {
+                            "description": "The name of segment",
+                            "type": "string"
+                        },
+                        "SegmentGroups": {
+                            "description": "A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source segments. Your request can only include one segment group. Your request can include either a SegmentGroups object or a Dimensions object, but not both.",
+                            "properties": {
+                                "Groups": {
+                                    "description": "A set of segment criteria to evaluate.",
+                                    "items": {
+                                        "description": "Segment group definition.",
+                                        "properties": {
+                                            "Dimensions": {
+                                                "description": "List of dimensions to include or exclude.",
+                                                "items": {
+                                                    "description": "Segment dimensions",
+                                                    "properties": {
+                                                        "Attributes": {
+                                                            "description": "Custom segment attributes.",
+                                                            "items": {
+                                                                "properties": {
+                                                                    "key": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "value": {
+                                                                        "description": "Custom attibute dimension",
+                                                                        "properties": {
+                                                                            "AttributeType": {
+                                                                                "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                                "enum": [
+                                                                                    "INCLUSIVE",
+                                                                                    "EXCLUSIVE"
+                                                                                ],
+                                                                                "type": "string"
+                                                                            },
+                                                                            "Values": {
+                                                                                "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "Behavior": {
+                                                            "description": "The segment behaviors attributes.",
+                                                            "properties": {
+                                                                "Recency": {
+                                                                    "description": "The recency of use.",
+                                                                    "properties": {
+                                                                        "Duration": {
+                                                                            "description": "The length of time during which users have been active or inactive with your app.\n\nValid values: HR_24, DAY_7, DAY_14, DAY_30",
+                                                                            "enum": [
+                                                                                "HR_24",
+                                                                                "DAY_7",
+                                                                                "DAY_14",
+                                                                                "DAY_30"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "RecencyType": {
+                                                                            "description": "The recency dimension type:\n\nACTIVE - Users who have used your app within the specified duration are included in the segment.\n\nINACTIVE - Users who have not used your app within the specified duration are included in the segment.",
+                                                                            "enum": [
+                                                                                "ACTIVE",
+                                                                                "INACTIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "Demographic": {
+                                                            "description": "The segment demographics attributes.",
+                                                            "properties": {
+                                                                "AppVersion": {
+                                                                    "description": "The app version criteria for the segment.",
+                                                                    "properties": {
+                                                                        "DimensionType": {
+                                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                            "enum": [
+                                                                                "INCLUSIVE",
+                                                                                "EXCLUSIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Values": {
+                                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "Channel": {
+                                                                    "description": "The channel criteria for the segment.",
+                                                                    "properties": {
+                                                                        "DimensionType": {
+                                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                            "enum": [
+                                                                                "INCLUSIVE",
+                                                                                "EXCLUSIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Values": {
+                                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "DeviceType": {
+                                                                    "description": "The device type criteria for the segment.",
+                                                                    "properties": {
+                                                                        "DimensionType": {
+                                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                            "enum": [
+                                                                                "INCLUSIVE",
+                                                                                "EXCLUSIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Values": {
+                                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "Make": {
+                                                                    "description": "The device make criteria for the segment.",
+                                                                    "properties": {
+                                                                        "DimensionType": {
+                                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                            "enum": [
+                                                                                "INCLUSIVE",
+                                                                                "EXCLUSIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Values": {
+                                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "Model": {
+                                                                    "description": "The device model criteria for the segment.",
+                                                                    "properties": {
+                                                                        "DimensionType": {
+                                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                            "enum": [
+                                                                                "INCLUSIVE",
+                                                                                "EXCLUSIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Values": {
+                                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "Platform": {
+                                                                    "description": "The device platform criteria for the segment.",
+                                                                    "properties": {
+                                                                        "DimensionType": {
+                                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                            "enum": [
+                                                                                "INCLUSIVE",
+                                                                                "EXCLUSIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Values": {
+                                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "Location": {
+                                                            "description": "The segment location attributes.",
+                                                            "properties": {
+                                                                "Country": {
+                                                                    "description": "The country or region, in ISO 3166-1 alpha-2 format.",
+                                                                    "properties": {
+                                                                        "DimensionType": {
+                                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                            "enum": [
+                                                                                "INCLUSIVE",
+                                                                                "EXCLUSIVE"
+                                                                            ],
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Values": {
+                                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "GPSPoint": {
+                                                                    "description": "The GPS Point dimension.",
+                                                                    "properties": {
+                                                                        "Coordinates": {
+                                                                            "description": "Coordinate to measure distance from.",
+                                                                            "properties": {
+                                                                                "Latitude": {
+                                                                                    "description": "Latitude",
+                                                                                    "format": "double",
+                                                                                    "type": "number"
+                                                                                },
+                                                                                "Longitude": {
+                                                                                    "description": "Longitude",
+                                                                                    "format": "double",
+                                                                                    "type": "number"
+                                                                                }
+                                                                            },
+                                                                            "type": "object"
+                                                                        },
+                                                                        "RangeInKilometers": {
+                                                                            "description": "Range in kilometers from the coordinate.",
+                                                                            "format": "double",
+                                                                            "type": "number"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "Metrics": {
+                                                            "description": "Custom segment metrics.",
+                                                            "items": {
+                                                                "properties": {
+                                                                    "key": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "value": {
+                                                                        "description": "Custom metric dimension",
+                                                                        "properties": {
+                                                                            "ComparisonOperator": {
+                                                                                "description": "The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL",
+                                                                                "type": "string"
+                                                                            },
+                                                                            "Value": {
+                                                                                "description": "The value to be compared.",
+                                                                                "format": "double",
+                                                                                "type": "number"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "UserAttributes": {
+                                                            "description": "Custom segment user attributes.",
+                                                            "items": {
+                                                                "properties": {
+                                                                    "key": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "value": {
+                                                                        "description": "Custom attibute dimension",
+                                                                        "properties": {
+                                                                            "AttributeType": {
+                                                                                "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                                "enum": [
+                                                                                    "INCLUSIVE",
+                                                                                    "EXCLUSIVE"
+                                                                                ],
+                                                                                "type": "string"
+                                                                            },
+                                                                            "Values": {
+                                                                                "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "SourceSegments": {
+                                                "description": "The base segment that you build your segment on. The source segment defines the starting \"universe\" of endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify. You can specify more than one dimensional segment. You can only specify one imported segment.\n\nNOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the Amazon Pinpoint console shows the size of the imported segment, without any filters applied to it.",
+                                                "items": {
+                                                    "description": "Segment reference.",
+                                                    "properties": {
+                                                        "Id": {
+                                                            "description": "A unique identifier for the segment.",
+                                                            "type": "string"
+                                                        },
+                                                        "Version": {
+                                                            "description": "If specified contains a specific version of the segment included.",
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "SourceType": {
+                                                "description": "Specify how to handle multiple source segments. For example, if you specify three source segments, should the resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.",
+                                                "enum": [
+                                                    "ALL",
+                                                    "ANY",
+                                                    "NONE"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "Type": {
+                                                "description": "Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should the resulting segment include endpoints that are matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or NONE.",
+                                                "enum": [
+                                                    "ALL",
+                                                    "ANY",
+                                                    "NONE"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "Include": {
+                                    "description": "Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created. Acceptable values: ALL, ANY, or NONE.",
+                                    "enum": [
+                                        "ALL",
+                                        "ANY",
+                                        "NONE"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "tags": {
+                            "description": "The Tags for the segments.",
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "WriteSegmentRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "segment_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

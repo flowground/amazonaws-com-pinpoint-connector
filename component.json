@@ -1,0 +1,1349 @@
+{
+    "title": "Amazon Pinpoint",
+    "description": "Amazon Pinpoint",
+    "docsUrl": "https://docs.aws.amazon.com/pinpoint/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/pinpoint/2016-12-01/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://pinpoint.amazonaws.com/",
+                    "http://pinpoint.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "GetApps": {
+            "main": "./lib/actions/GetApps.js",
+            "title": "Returns information about your apps.",
+            "description": "Returns information about your apps.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApps.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateApp": {
+            "main": "./lib/actions/CreateApp.js",
+            "title": "Creates or updates an app.",
+            "description": "Creates or updates an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteApp": {
+            "main": "./lib/actions/DeleteApp.js",
+            "title": "Deletes an app.",
+            "description": "Deletes an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApp": {
+            "main": "./lib/actions/GetApp.js",
+            "title": "Returns information about an app.",
+            "description": "Returns information about an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RemoveAttributes": {
+            "main": "./lib/actions/RemoveAttributes.js",
+            "title": "Used to remove the attributes for an app",
+            "description": "Used to remove the attributes for an app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RemoveAttributes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCampaigns": {
+            "main": "./lib/actions/GetCampaigns.js",
+            "title": "Returns information about your campaigns.",
+            "description": "Returns information about your campaigns.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCampaigns.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateCampaign": {
+            "main": "./lib/actions/CreateCampaign.js",
+            "title": "Creates or updates a campaign.",
+            "description": "Creates or updates a campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateCampaign.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteCampaign": {
+            "main": "./lib/actions/DeleteCampaign.js",
+            "title": "Deletes a campaign.",
+            "description": "Deletes a campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteCampaign.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCampaign": {
+            "main": "./lib/actions/GetCampaign.js",
+            "title": "Returns information about a campaign.",
+            "description": "Returns information about a campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCampaign.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateCampaign": {
+            "main": "./lib/actions/UpdateCampaign.js",
+            "title": "Use to update a campaign.",
+            "description": "Use to update a campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateCampaign.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCampaignActivities": {
+            "main": "./lib/actions/GetCampaignActivities.js",
+            "title": "Returns information about the activity performed by a campaign.",
+            "description": "Returns information about the activity performed by a campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCampaignActivities.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCampaignVersions": {
+            "main": "./lib/actions/GetCampaignVersions.js",
+            "title": "Returns information about your campaign versions.",
+            "description": "Returns information about your campaign versions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCampaignVersions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCampaignVersion": {
+            "main": "./lib/actions/GetCampaignVersion.js",
+            "title": "Returns information about a specific version of a campaign.",
+            "description": "Returns information about a specific version of a campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCampaignVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetChannels": {
+            "main": "./lib/actions/GetChannels.js",
+            "title": "Get all channels.",
+            "description": "Get all channels.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetChannels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteAdmChannel": {
+            "main": "./lib/actions/DeleteAdmChannel.js",
+            "title": "Delete an ADM channel.",
+            "description": "Delete an ADM channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteAdmChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetAdmChannel": {
+            "main": "./lib/actions/GetAdmChannel.js",
+            "title": "Get an ADM channel.",
+            "description": "Get an ADM channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetAdmChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateAdmChannel": {
+            "main": "./lib/actions/UpdateAdmChannel.js",
+            "title": "Update an ADM channel.",
+            "description": "Update an ADM channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateAdmChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteApnsChannel": {
+            "main": "./lib/actions/DeleteApnsChannel.js",
+            "title": "Deletes the APNs channel for an app.",
+            "description": "Deletes the APNs channel for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteApnsChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApnsChannel": {
+            "main": "./lib/actions/GetApnsChannel.js",
+            "title": "Returns information about the APNs channel for an app.",
+            "description": "Returns information about the APNs channel for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApnsChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateApnsChannel": {
+            "main": "./lib/actions/UpdateApnsChannel.js",
+            "title": "Use to update the APNs channel for an app.",
+            "description": "Use to update the APNs channel for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateApnsChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteApnsSandboxChannel": {
+            "main": "./lib/actions/DeleteApnsSandboxChannel.js",
+            "title": "Delete an APNS sandbox channel.",
+            "description": "Delete an APNS sandbox channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteApnsSandboxChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApnsSandboxChannel": {
+            "main": "./lib/actions/GetApnsSandboxChannel.js",
+            "title": "Get an APNS sandbox channel.",
+            "description": "Get an APNS sandbox channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApnsSandboxChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateApnsSandboxChannel": {
+            "main": "./lib/actions/UpdateApnsSandboxChannel.js",
+            "title": "Update an APNS sandbox channel.",
+            "description": "Update an APNS sandbox channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateApnsSandboxChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteApnsVoipChannel": {
+            "main": "./lib/actions/DeleteApnsVoipChannel.js",
+            "title": "Delete an APNS VoIP channel",
+            "description": "Delete an APNS VoIP channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteApnsVoipChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApnsVoipChannel": {
+            "main": "./lib/actions/GetApnsVoipChannel.js",
+            "title": "Get an APNS VoIP channel",
+            "description": "Get an APNS VoIP channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApnsVoipChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateApnsVoipChannel": {
+            "main": "./lib/actions/UpdateApnsVoipChannel.js",
+            "title": "Update an APNS VoIP channel",
+            "description": "Update an APNS VoIP channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateApnsVoipChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteApnsVoipSandboxChannel": {
+            "main": "./lib/actions/DeleteApnsVoipSandboxChannel.js",
+            "title": "Delete an APNS VoIP sandbox channel",
+            "description": "Delete an APNS VoIP sandbox channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteApnsVoipSandboxChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApnsVoipSandboxChannel": {
+            "main": "./lib/actions/GetApnsVoipSandboxChannel.js",
+            "title": "Get an APNS VoIPSandbox channel",
+            "description": "Get an APNS VoIPSandbox channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApnsVoipSandboxChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateApnsVoipSandboxChannel": {
+            "main": "./lib/actions/UpdateApnsVoipSandboxChannel.js",
+            "title": "Update an APNS VoIP sandbox channel",
+            "description": "Update an APNS VoIP sandbox channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateApnsVoipSandboxChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteBaiduChannel": {
+            "main": "./lib/actions/DeleteBaiduChannel.js",
+            "title": "Delete a BAIDU GCM channel",
+            "description": "Delete a BAIDU GCM channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteBaiduChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetBaiduChannel": {
+            "main": "./lib/actions/GetBaiduChannel.js",
+            "title": "Get a BAIDU GCM channel",
+            "description": "Get a BAIDU GCM channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetBaiduChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateBaiduChannel": {
+            "main": "./lib/actions/UpdateBaiduChannel.js",
+            "title": "Update a BAIDU GCM channel",
+            "description": "Update a BAIDU GCM channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateBaiduChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteEmailChannel": {
+            "main": "./lib/actions/DeleteEmailChannel.js",
+            "title": "Delete an email channel.",
+            "description": "Delete an email channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteEmailChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetEmailChannel": {
+            "main": "./lib/actions/GetEmailChannel.js",
+            "title": "Get an email channel.",
+            "description": "Get an email channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetEmailChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateEmailChannel": {
+            "main": "./lib/actions/UpdateEmailChannel.js",
+            "title": "Update an email channel.",
+            "description": "Update an email channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateEmailChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteGcmChannel": {
+            "main": "./lib/actions/DeleteGcmChannel.js",
+            "title": "Deletes the GCM channel for an app.",
+            "description": "Deletes the GCM channel for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteGcmChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetGcmChannel": {
+            "main": "./lib/actions/GetGcmChannel.js",
+            "title": "Returns information about the GCM channel for an app.",
+            "description": "Returns information about the GCM channel for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetGcmChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateGcmChannel": {
+            "main": "./lib/actions/UpdateGcmChannel.js",
+            "title": "Use to update the GCM channel for an app.",
+            "description": "Use to update the GCM channel for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateGcmChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteSmsChannel": {
+            "main": "./lib/actions/DeleteSmsChannel.js",
+            "title": "Delete an SMS channel.",
+            "description": "Delete an SMS channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteSmsChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSmsChannel": {
+            "main": "./lib/actions/GetSmsChannel.js",
+            "title": "Get an SMS channel.",
+            "description": "Get an SMS channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSmsChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateSmsChannel": {
+            "main": "./lib/actions/UpdateSmsChannel.js",
+            "title": "Update an SMS channel.",
+            "description": "Update an SMS channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateSmsChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteVoiceChannel": {
+            "main": "./lib/actions/DeleteVoiceChannel.js",
+            "title": "Delete an Voice channel",
+            "description": "Delete an Voice channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteVoiceChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetVoiceChannel": {
+            "main": "./lib/actions/GetVoiceChannel.js",
+            "title": "Get a Voice Channel",
+            "description": "Get a Voice Channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetVoiceChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateVoiceChannel": {
+            "main": "./lib/actions/UpdateVoiceChannel.js",
+            "title": "Update an Voice channel",
+            "description": "Update an Voice channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateVoiceChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateEndpointsBatch": {
+            "main": "./lib/actions/UpdateEndpointsBatch.js",
+            "title": "Use to update a batch of endpoints.",
+            "description": "Use to update a batch of endpoints.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateEndpointsBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteEndpoint": {
+            "main": "./lib/actions/DeleteEndpoint.js",
+            "title": "Deletes an endpoint.",
+            "description": "Deletes an endpoint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteEndpoint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetEndpoint": {
+            "main": "./lib/actions/GetEndpoint.js",
+            "title": "Returns information about an endpoint.",
+            "description": "Returns information about an endpoint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetEndpoint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateEndpoint": {
+            "main": "./lib/actions/UpdateEndpoint.js",
+            "title": "Creates or updates an endpoint.",
+            "description": "Creates or updates an endpoint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateEndpoint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PutEvents": {
+            "main": "./lib/actions/PutEvents.js",
+            "title": "Use to record events for endpoints. This method creates events and creates or updates the endpoints that those events are associated with.",
+            "description": "Use to record events for endpoints. This method creates events and creates or updates the endpoints that those events are associated with.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PutEvents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteEventStream": {
+            "main": "./lib/actions/DeleteEventStream.js",
+            "title": "Deletes the event stream for an app.",
+            "description": "Deletes the event stream for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteEventStream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetEventStream": {
+            "main": "./lib/actions/GetEventStream.js",
+            "title": "Returns the event stream for an app.",
+            "description": "Returns the event stream for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetEventStream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PutEventStream": {
+            "main": "./lib/actions/PutEventStream.js",
+            "title": "Use to create or update the event stream for an app.",
+            "description": "Use to create or update the event stream for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PutEventStream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetExportJobs": {
+            "main": "./lib/actions/GetExportJobs.js",
+            "title": "Returns information about your export jobs.",
+            "description": "Returns information about your export jobs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetExportJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateExportJob": {
+            "main": "./lib/actions/CreateExportJob.js",
+            "title": "Creates an export job.",
+            "description": "Creates an export job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateExportJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetExportJob": {
+            "main": "./lib/actions/GetExportJob.js",
+            "title": "Returns information about an export job.",
+            "description": "Returns information about an export job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetExportJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetImportJobs": {
+            "main": "./lib/actions/GetImportJobs.js",
+            "title": "Returns information about your import jobs.",
+            "description": "Returns information about your import jobs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetImportJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateImportJob": {
+            "main": "./lib/actions/CreateImportJob.js",
+            "title": "Creates or updates an import job.",
+            "description": "Creates or updates an import job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateImportJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetImportJob": {
+            "main": "./lib/actions/GetImportJob.js",
+            "title": "Returns information about an import job.",
+            "description": "Returns information about an import job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetImportJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SendMessages": {
+            "main": "./lib/actions/SendMessages.js",
+            "title": "Used to send a direct message.",
+            "description": "Used to send a direct message.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SendMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSegments": {
+            "main": "./lib/actions/GetSegments.js",
+            "title": "Used to get information about your segments.",
+            "description": "Used to get information about your segments.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSegments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateSegment": {
+            "main": "./lib/actions/CreateSegment.js",
+            "title": "Used to create or update a segment.",
+            "description": "Used to create or update a segment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateSegment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteSegment": {
+            "main": "./lib/actions/DeleteSegment.js",
+            "title": "Deletes a segment.",
+            "description": "Deletes a segment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteSegment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSegment": {
+            "main": "./lib/actions/GetSegment.js",
+            "title": "Returns information about a segment.",
+            "description": "Returns information about a segment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSegment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateSegment": {
+            "main": "./lib/actions/UpdateSegment.js",
+            "title": "Used to update a segment.",
+            "description": "Used to update a segment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateSegment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSegmentExportJobs": {
+            "main": "./lib/actions/GetSegmentExportJobs.js",
+            "title": "Returns a list of export jobs for a specific segment.",
+            "description": "Returns a list of export jobs for a specific segment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSegmentExportJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSegmentImportJobs": {
+            "main": "./lib/actions/GetSegmentImportJobs.js",
+            "title": "Returns a list of import jobs for a specific segment.",
+            "description": "Returns a list of import jobs for a specific segment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSegmentImportJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSegmentVersions": {
+            "main": "./lib/actions/GetSegmentVersions.js",
+            "title": "Returns information about your segment versions.",
+            "description": "Returns information about your segment versions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSegmentVersions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSegmentVersion": {
+            "main": "./lib/actions/GetSegmentVersion.js",
+            "title": "Returns information about a segment version.",
+            "description": "Returns information about a segment version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSegmentVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApplicationSettings": {
+            "main": "./lib/actions/GetApplicationSettings.js",
+            "title": "Used to request the settings for an app.",
+            "description": "Used to request the settings for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApplicationSettings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateApplicationSettings": {
+            "main": "./lib/actions/UpdateApplicationSettings.js",
+            "title": "Used to update the settings for an app.",
+            "description": "Used to update the settings for an app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateApplicationSettings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SendUsersMessages": {
+            "main": "./lib/actions/SendUsersMessages.js",
+            "title": "Used to send a message to a list of users.",
+            "description": "Used to send a message to a list of users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SendUsersMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteUserEndpoints": {
+            "main": "./lib/actions/DeleteUserEndpoints.js",
+            "title": "Deletes endpoints that are associated with a User ID.",
+            "description": "Deletes endpoints that are associated with a User ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteUserEndpoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetUserEndpoints": {
+            "main": "./lib/actions/GetUserEndpoints.js",
+            "title": "Returns information about the endpoints that are associated with a User ID.",
+            "description": "Returns information about the endpoints that are associated with a User ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetUserEndpoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PhoneNumberValidate": {
+            "main": "./lib/actions/PhoneNumberValidate.js",
+            "title": "Returns information about the specified phone number.",
+            "description": "Returns information about the specified phone number.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PhoneNumberValidate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UntagResource": {
+            "main": "./lib/actions/UntagResource.js",
+            "title": "UntagResource",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UntagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTagsForResource": {
+            "main": "./lib/actions/ListTagsForResource.js",
+            "title": "ListTagsForResource",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTagsForResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagResource": {
+            "main": "./lib/actions/TagResource.js",
+            "title": "TagResource",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

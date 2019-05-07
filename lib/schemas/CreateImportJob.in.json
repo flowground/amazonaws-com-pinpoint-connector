@@ -1,0 +1,91 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ImportJobRequest": {
+                    "description": "Import job request.",
+                    "properties": {
+                        "DefineSegment": {
+                            "description": "Sets whether the endpoints create a segment when they are imported.",
+                            "type": "boolean"
+                        },
+                        "ExternalId": {
+                            "description": "(Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles assumed by Amazon Pinpoint.",
+                            "type": "string"
+                        },
+                        "Format": {
+                            "description": "The format of the files that contain the endpoint definitions.\nValid values: CSV, JSON",
+                            "enum": [
+                                "CSV",
+                                "JSON"
+                            ],
+                            "type": "string"
+                        },
+                        "RegisterEndpoints": {
+                            "description": "Sets whether the endpoints are registered with Amazon Pinpoint when they are imported.",
+                            "type": "boolean"
+                        },
+                        "RoleArn": {
+                            "description": "The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that contains the endpoints to import.",
+                            "type": "string"
+                        },
+                        "S3Url": {
+                            "description": "The URL of the S3 bucket that contains the segment information to import. The location can be a folder or a single file. The URL should use the following format: s3://bucket-name/folder-name/file-name\n\nAmazon Pinpoint imports endpoints from this location and any subfolders it contains.",
+                            "type": "string"
+                        },
+                        "SegmentId": {
+                            "description": "The ID of the segment to update if the import job is meant to update an existing segment.",
+                            "type": "string"
+                        },
+                        "SegmentName": {
+                            "description": "A custom name for the segment created by the import job. Use if DefineSegment is true.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "ImportJobRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

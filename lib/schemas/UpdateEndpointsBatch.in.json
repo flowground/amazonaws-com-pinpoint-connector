@@ -1,0 +1,238 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "EndpointBatchRequest": {
+                    "description": "Endpoint batch update request.",
+                    "properties": {
+                        "Item": {
+                            "description": "List of items to update. Maximum 100 items",
+                            "items": {
+                                "description": "Endpoint update request",
+                                "properties": {
+                                    "Address": {
+                                        "description": "The destination for messages that you send to this endpoint. The address varies by channel. For mobile push channels, use the token provided by the push notification service, such as the APNs device token or the FCM registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.",
+                                        "type": "string"
+                                    },
+                                    "Attributes": {
+                                        "description": "Custom attributes that describe the endpoint by associating a name with an array of values. For example, an attribute named \"interests\" might have the values [\"science\", \"politics\", \"travel\"]. You can use these attributes as selection criteria when you create a segment of users to engage with a messaging campaign.\n\nThe following characters are not recommended in attribute names: # : ? \\ /. The Amazon Pinpoint console does not display attributes that include these characters in the name. This limitation does not apply to attribute values.",
+                                        "items": {
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "ChannelType": {
+                                        "description": "The channel type.\n\nValid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU",
+                                        "enum": [
+                                            "GCM",
+                                            "APNS",
+                                            "APNS_SANDBOX",
+                                            "APNS_VOIP",
+                                            "APNS_VOIP_SANDBOX",
+                                            "ADM",
+                                            "SMS",
+                                            "VOICE",
+                                            "EMAIL",
+                                            "BAIDU",
+                                            "CUSTOM"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "Demographic": {
+                                        "description": "The endpoint demographic attributes.",
+                                        "properties": {
+                                            "AppVersion": {
+                                                "description": "The version of the application associated with the endpoint.",
+                                                "type": "string"
+                                            },
+                                            "Locale": {
+                                                "description": "The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore, followed by an ISO 3166-1 alpha-2 value.\n",
+                                                "type": "string"
+                                            },
+                                            "Make": {
+                                                "description": "The manufacturer of the endpoint device, such as Apple or Samsung.",
+                                                "type": "string"
+                                            },
+                                            "Model": {
+                                                "description": "The model name or number of the endpoint device, such as iPhone.",
+                                                "type": "string"
+                                            },
+                                            "ModelVersion": {
+                                                "description": "The model version of the endpoint device.",
+                                                "type": "string"
+                                            },
+                                            "Platform": {
+                                                "description": "The platform of the endpoint device, such as iOS or Android.",
+                                                "type": "string"
+                                            },
+                                            "PlatformVersion": {
+                                                "description": "The platform version of the endpoint device.",
+                                                "type": "string"
+                                            },
+                                            "Timezone": {
+                                                "description": "The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "EffectiveDate": {
+                                        "description": "The last time the endpoint was updated. Provided in ISO 8601 format.",
+                                        "type": "string"
+                                    },
+                                    "EndpointStatus": {
+                                        "description": "Unused.",
+                                        "type": "string"
+                                    },
+                                    "Id": {
+                                        "description": "The unique Id for the Endpoint in the batch.",
+                                        "type": "string"
+                                    },
+                                    "Location": {
+                                        "description": "The endpoint location attributes.",
+                                        "properties": {
+                                            "City": {
+                                                "description": "The city where the endpoint is located.",
+                                                "type": "string"
+                                            },
+                                            "Country": {
+                                                "description": "The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code, such as \"US\" for the United States.",
+                                                "type": "string"
+                                            },
+                                            "Latitude": {
+                                                "description": "The latitude of the endpoint location, rounded to one decimal place.",
+                                                "format": "double",
+                                                "type": "number"
+                                            },
+                                            "Longitude": {
+                                                "description": "The longitude of the endpoint location, rounded to one decimal place.",
+                                                "format": "double",
+                                                "type": "number"
+                                            },
+                                            "PostalCode": {
+                                                "description": "The postal code or zip code of the endpoint.",
+                                                "type": "string"
+                                            },
+                                            "Region": {
+                                                "description": "The region of the endpoint location. For example, in the United States, this corresponds to a state.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "Metrics": {
+                                        "description": "Custom metrics that your app reports to Amazon Pinpoint.",
+                                        "items": {
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "format": "double",
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "OptOut": {
+                                        "description": "Indicates whether a user has opted out of receiving messages with one of the following values:\n\nALL - User has opted out of all messages.\n\nNONE - Users has not opted out and receives all messages.",
+                                        "type": "string"
+                                    },
+                                    "RequestId": {
+                                        "description": "The unique ID for the most recent request to update the endpoint.",
+                                        "type": "string"
+                                    },
+                                    "User": {
+                                        "description": "Custom user-specific attributes that your app reports to Amazon Pinpoint.",
+                                        "properties": {
+                                            "UserAttributes": {
+                                                "description": "Custom attributes that describe the user by associating a name with an array of values. For example, an attribute named \"interests\" might have the following values: [\"science\", \"politics\", \"travel\"]. You can use these attributes as selection criteria when you create segments.\n\nThe Amazon Pinpoint console can't display attribute names that include the following characters: hash/pound sign (#), colon (:), question mark (?), backslash (\\), and forward slash (/). For this reason, you should avoid using these characters in the names of custom attributes.",
+                                                "items": {
+                                                    "properties": {
+                                                        "key": {
+                                                            "type": "string"
+                                                        },
+                                                        "value": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "UserId": {
+                                                "description": "The unique ID of the user.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "EndpointBatchRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

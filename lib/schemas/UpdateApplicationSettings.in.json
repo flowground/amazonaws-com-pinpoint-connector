@@ -1,0 +1,117 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "WriteApplicationSettingsRequest": {
+                    "description": "Creating application setting request",
+                    "properties": {
+                        "CampaignHook": {
+                            "description": "Default campaign hook information.",
+                            "properties": {
+                                "LambdaFunctionName": {
+                                    "description": "Lambda function name or arn to be called for delivery",
+                                    "type": "string"
+                                },
+                                "Mode": {
+                                    "description": "What mode Lambda should be invoked in.",
+                                    "enum": [
+                                        "DELIVERY",
+                                        "FILTER"
+                                    ],
+                                    "type": "string"
+                                },
+                                "WebUrl": {
+                                    "description": "Web URL to call for hook. If the URL has authentication specified it will be added as authentication to the request",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "CloudWatchMetricsEnabled": {
+                            "description": "The CloudWatchMetrics settings for the app.",
+                            "type": "boolean"
+                        },
+                        "Limits": {
+                            "description": "The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which override the settings at the project level.",
+                            "properties": {
+                                "Daily": {
+                                    "description": "The maximum number of messages that each campaign can send to a single endpoint in a 24-hour period.",
+                                    "type": "integer"
+                                },
+                                "MaximumDuration": {
+                                    "description": "The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This duration begins at the scheduled start time for the campaign. The minimum value is 60.",
+                                    "type": "integer"
+                                },
+                                "MessagesPerSecond": {
+                                    "description": "The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is 20000.",
+                                    "type": "integer"
+                                },
+                                "Total": {
+                                    "description": "The maximum number of messages that an individual campaign can send to a single endpoint over the course of the campaign.",
+                                    "type": "integer"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "QuietTime": {
+                            "description": "The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the quiet time.\n\nNote: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet time for your app. If your endpoints don't include this attribute, they'll receive the messages that you send them, even if quiet time is enabled.\n\nWhen you set up an app to use quiet time, campaigns in that app don't send messages during the time range you specified, as long as all of the following are true:\n- The endpoint includes a valid Demographic.Timezone attribute.\n- The current time in the endpoint's time zone is later than or equal to the time specified in the QuietTime.Start attribute for the app (or campaign, if applicable).\n- The current time in the endpoint's time zone is earlier than or equal to the time specified in the QuietTime.End attribute for the app (or campaign, if applicable).\n\nIndividual campaigns within the app can have their own quiet time settings, which override the quiet time settings at the app level.",
+                            "properties": {
+                                "End": {
+                                    "description": "The time at which quiet time should end. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.",
+                                    "type": "string"
+                                },
+                                "Start": {
+                                    "description": "The time at which quiet time should begin. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "WriteApplicationSettingsRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

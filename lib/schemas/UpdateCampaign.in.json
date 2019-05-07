@@ -1,0 +1,1156 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "WriteCampaignRequest": {
+                    "description": "Used to create a campaign.",
+                    "properties": {
+                        "AdditionalTreatments": {
+                            "description": "Treatments that are defined in addition to the default treatment.",
+                            "items": {
+                                "description": "Used to create a campaign treatment.",
+                                "properties": {
+                                    "MessageConfiguration": {
+                                        "description": "The message configuration settings.",
+                                        "properties": {
+                                            "ADMMessage": {
+                                                "description": "The message that the campaign delivers to ADM channels. Overrides the default message.",
+                                                "properties": {
+                                                    "Action": {
+                                                        "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                                        "enum": [
+                                                            "OPEN_APP",
+                                                            "DEEP_LINK",
+                                                            "URL"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Body": {
+                                                        "description": "The message body. Can include up to 140 characters.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageIconUrl": {
+                                                        "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageSmallIconUrl": {
+                                                        "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageUrl": {
+                                                        "description": "The URL that points to an image used in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "JsonBody": {
+                                                        "description": "The JSON payload used for a silent push.",
+                                                        "type": "string"
+                                                    },
+                                                    "MediaUrl": {
+                                                        "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "RawContent": {
+                                                        "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                                        "type": "string"
+                                                    },
+                                                    "SilentPush": {
+                                                        "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                                        "type": "boolean"
+                                                    },
+                                                    "TimeToLive": {
+                                                        "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                                        "type": "integer"
+                                                    },
+                                                    "Title": {
+                                                        "description": "The message title that displays above the message on the user's device.",
+                                                        "type": "string"
+                                                    },
+                                                    "Url": {
+                                                        "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "APNSMessage": {
+                                                "description": "The message that the campaign delivers to APNS channels. Overrides the default message.",
+                                                "properties": {
+                                                    "Action": {
+                                                        "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                                        "enum": [
+                                                            "OPEN_APP",
+                                                            "DEEP_LINK",
+                                                            "URL"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Body": {
+                                                        "description": "The message body. Can include up to 140 characters.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageIconUrl": {
+                                                        "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageSmallIconUrl": {
+                                                        "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageUrl": {
+                                                        "description": "The URL that points to an image used in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "JsonBody": {
+                                                        "description": "The JSON payload used for a silent push.",
+                                                        "type": "string"
+                                                    },
+                                                    "MediaUrl": {
+                                                        "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "RawContent": {
+                                                        "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                                        "type": "string"
+                                                    },
+                                                    "SilentPush": {
+                                                        "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                                        "type": "boolean"
+                                                    },
+                                                    "TimeToLive": {
+                                                        "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                                        "type": "integer"
+                                                    },
+                                                    "Title": {
+                                                        "description": "The message title that displays above the message on the user's device.",
+                                                        "type": "string"
+                                                    },
+                                                    "Url": {
+                                                        "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "BaiduMessage": {
+                                                "description": "The message that the campaign delivers to Baidu channels. Overrides the default message.",
+                                                "properties": {
+                                                    "Action": {
+                                                        "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                                        "enum": [
+                                                            "OPEN_APP",
+                                                            "DEEP_LINK",
+                                                            "URL"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Body": {
+                                                        "description": "The message body. Can include up to 140 characters.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageIconUrl": {
+                                                        "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageSmallIconUrl": {
+                                                        "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageUrl": {
+                                                        "description": "The URL that points to an image used in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "JsonBody": {
+                                                        "description": "The JSON payload used for a silent push.",
+                                                        "type": "string"
+                                                    },
+                                                    "MediaUrl": {
+                                                        "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "RawContent": {
+                                                        "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                                        "type": "string"
+                                                    },
+                                                    "SilentPush": {
+                                                        "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                                        "type": "boolean"
+                                                    },
+                                                    "TimeToLive": {
+                                                        "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                                        "type": "integer"
+                                                    },
+                                                    "Title": {
+                                                        "description": "The message title that displays above the message on the user's device.",
+                                                        "type": "string"
+                                                    },
+                                                    "Url": {
+                                                        "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "DefaultMessage": {
+                                                "description": "The default message for all channels.",
+                                                "properties": {
+                                                    "Action": {
+                                                        "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                                        "enum": [
+                                                            "OPEN_APP",
+                                                            "DEEP_LINK",
+                                                            "URL"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Body": {
+                                                        "description": "The message body. Can include up to 140 characters.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageIconUrl": {
+                                                        "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageSmallIconUrl": {
+                                                        "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageUrl": {
+                                                        "description": "The URL that points to an image used in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "JsonBody": {
+                                                        "description": "The JSON payload used for a silent push.",
+                                                        "type": "string"
+                                                    },
+                                                    "MediaUrl": {
+                                                        "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "RawContent": {
+                                                        "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                                        "type": "string"
+                                                    },
+                                                    "SilentPush": {
+                                                        "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                                        "type": "boolean"
+                                                    },
+                                                    "TimeToLive": {
+                                                        "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                                        "type": "integer"
+                                                    },
+                                                    "Title": {
+                                                        "description": "The message title that displays above the message on the user's device.",
+                                                        "type": "string"
+                                                    },
+                                                    "Url": {
+                                                        "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "EmailMessage": {
+                                                "description": "The email message configuration.",
+                                                "properties": {
+                                                    "Body": {
+                                                        "description": "The email text body.",
+                                                        "type": "string"
+                                                    },
+                                                    "FromAddress": {
+                                                        "description": "The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.",
+                                                        "type": "string"
+                                                    },
+                                                    "HtmlBody": {
+                                                        "description": "The email html body.",
+                                                        "type": "string"
+                                                    },
+                                                    "Title": {
+                                                        "description": "The email title (Or subject).",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "GCMMessage": {
+                                                "description": "The message that the campaign delivers to GCM channels. Overrides the default message.",
+                                                "properties": {
+                                                    "Action": {
+                                                        "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                                        "enum": [
+                                                            "OPEN_APP",
+                                                            "DEEP_LINK",
+                                                            "URL"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Body": {
+                                                        "description": "The message body. Can include up to 140 characters.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageIconUrl": {
+                                                        "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageSmallIconUrl": {
+                                                        "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                                        "type": "string"
+                                                    },
+                                                    "ImageUrl": {
+                                                        "description": "The URL that points to an image used in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "JsonBody": {
+                                                        "description": "The JSON payload used for a silent push.",
+                                                        "type": "string"
+                                                    },
+                                                    "MediaUrl": {
+                                                        "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                                        "type": "string"
+                                                    },
+                                                    "RawContent": {
+                                                        "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                                        "type": "string"
+                                                    },
+                                                    "SilentPush": {
+                                                        "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                                        "type": "boolean"
+                                                    },
+                                                    "TimeToLive": {
+                                                        "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                                        "type": "integer"
+                                                    },
+                                                    "Title": {
+                                                        "description": "The message title that displays above the message on the user's device.",
+                                                        "type": "string"
+                                                    },
+                                                    "Url": {
+                                                        "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "SMSMessage": {
+                                                "description": "The SMS message configuration.",
+                                                "properties": {
+                                                    "Body": {
+                                                        "description": "The SMS text body.",
+                                                        "type": "string"
+                                                    },
+                                                    "MessageType": {
+                                                        "description": "Is this is a transactional SMS message, otherwise a promotional message.",
+                                                        "enum": [
+                                                            "TRANSACTIONAL",
+                                                            "PROMOTIONAL"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "SenderId": {
+                                                        "description": "Sender ID of sent message.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "Schedule": {
+                                        "description": "The campaign schedule.",
+                                        "properties": {
+                                            "EndTime": {
+                                                "description": "The scheduled time that the campaign ends in ISO 8601 format.",
+                                                "type": "string"
+                                            },
+                                            "EventFilter": {
+                                                "description": "Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.",
+                                                "properties": {
+                                                    "Dimensions": {
+                                                        "description": "An object that defines the dimensions for the event filter.",
+                                                        "properties": {
+                                                            "Attributes": {
+                                                                "description": "Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.",
+                                                                "items": {
+                                                                    "properties": {
+                                                                        "key": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "value": {
+                                                                            "description": "Custom attibute dimension",
+                                                                            "properties": {
+                                                                                "AttributeType": {
+                                                                                    "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                                    "enum": [
+                                                                                        "INCLUSIVE",
+                                                                                        "EXCLUSIVE"
+                                                                                    ],
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "Values": {
+                                                                                    "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                                    "items": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "type": "array"
+                                                                                }
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "type": "array"
+                                                            },
+                                                            "EventType": {
+                                                                "description": "The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon Pinpoint generates, such as _session.start, or a custom event that's specific to your app.",
+                                                                "properties": {
+                                                                    "DimensionType": {
+                                                                        "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                        "enum": [
+                                                                            "INCLUSIVE",
+                                                                            "EXCLUSIVE"
+                                                                        ],
+                                                                        "type": "string"
+                                                                    },
+                                                                    "Values": {
+                                                                        "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                        "items": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "type": "array"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "Metrics": {
+                                                                "description": "Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.",
+                                                                "items": {
+                                                                    "properties": {
+                                                                        "key": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "value": {
+                                                                            "description": "Custom metric dimension",
+                                                                            "properties": {
+                                                                                "ComparisonOperator": {
+                                                                                    "description": "The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL",
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "Value": {
+                                                                                    "description": "The value to be compared.",
+                                                                                    "format": "double",
+                                                                                    "type": "number"
+                                                                                }
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "type": "array"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "FilterType": {
+                                                        "description": "The type of event that causes the campaign to be sent. Possible values:\n\nSYSTEM - Send the campaign when a system event occurs. See the System resource for more information.\n\nENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.",
+                                                        "enum": [
+                                                            "SYSTEM",
+                                                            "ENDPOINT"
+                                                        ],
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "Frequency": {
+                                                "description": "How often the campaign delivers messages.\n\nValid values:\n\nONCE\n\nHOURLY\n\nDAILY\n\nWEEKLY\n\nMONTHLY\n\nEVENT",
+                                                "enum": [
+                                                    "ONCE",
+                                                    "HOURLY",
+                                                    "DAILY",
+                                                    "WEEKLY",
+                                                    "MONTHLY",
+                                                    "EVENT"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "IsLocalTime": {
+                                                "description": "Indicates whether the campaign schedule takes effect according to each user's local time.",
+                                                "type": "boolean"
+                                            },
+                                            "QuietTime": {
+                                                "description": "The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet time.\n\nNote: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet time for your campaign. If your endpoints don't include this attribute, they'll receive the messages that you send them, even if quiet time is enabled.\n\nWhen you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you specified, as long as all of the following are true:\n- The endpoint includes a valid Demographic.Timezone attribute.\n- The current time in the endpoint's time zone is later than or equal to the time specified in the QuietTime.Start attribute for the campaign.\n- The current time in the endpoint's time zone is earlier than or equal to the time specified in the QuietTime.End attribute for the campaign.",
+                                                "properties": {
+                                                    "End": {
+                                                        "description": "The time at which quiet time should end. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.",
+                                                        "type": "string"
+                                                    },
+                                                    "Start": {
+                                                        "description": "The time at which quiet time should begin. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "StartTime": {
+                                                "description": "The scheduled time that the campaign begins in ISO 8601 format.",
+                                                "type": "string"
+                                            },
+                                            "Timezone": {
+                                                "description": "The starting UTC offset for the schedule if the value for isLocalTime is true\n\nValid values: \nUTC\nUTC+01\nUTC+02\nUTC+03\nUTC+03:30\nUTC+04\nUTC+04:30\nUTC+05\nUTC+05:30\nUTC+05:45\nUTC+06\nUTC+06:30\nUTC+07\nUTC+08\nUTC+09\nUTC+09:30\nUTC+10\nUTC+10:30\nUTC+11\nUTC+12\nUTC+13\nUTC-02\nUTC-03\nUTC-04\nUTC-05\nUTC-06\nUTC-07\nUTC-08\nUTC-09\nUTC-10\nUTC-11",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "SizePercent": {
+                                        "description": "The allocated percentage of users for this treatment.",
+                                        "type": "integer"
+                                    },
+                                    "TreatmentDescription": {
+                                        "description": "A custom description for the treatment.",
+                                        "type": "string"
+                                    },
+                                    "TreatmentName": {
+                                        "description": "The custom name of a variation of the campaign used for A/B testing.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "Description": {
+                            "description": "A description of the campaign.",
+                            "type": "string"
+                        },
+                        "HoldoutPercent": {
+                            "description": "The allocated percentage of end users who will not receive messages from this campaign.",
+                            "type": "integer"
+                        },
+                        "Hook": {
+                            "description": "Campaign hook information.",
+                            "properties": {
+                                "LambdaFunctionName": {
+                                    "description": "Lambda function name or arn to be called for delivery",
+                                    "type": "string"
+                                },
+                                "Mode": {
+                                    "description": "What mode Lambda should be invoked in.",
+                                    "enum": [
+                                        "DELIVERY",
+                                        "FILTER"
+                                    ],
+                                    "type": "string"
+                                },
+                                "WebUrl": {
+                                    "description": "Web URL to call for hook. If the URL has authentication specified it will be added as authentication to the request",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "IsPaused": {
+                            "description": "Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by setting IsPaused to false.",
+                            "type": "boolean"
+                        },
+                        "Limits": {
+                            "description": "The campaign limits settings.",
+                            "properties": {
+                                "Daily": {
+                                    "description": "The maximum number of messages that each campaign can send to a single endpoint in a 24-hour period.",
+                                    "type": "integer"
+                                },
+                                "MaximumDuration": {
+                                    "description": "The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This duration begins at the scheduled start time for the campaign. The minimum value is 60.",
+                                    "type": "integer"
+                                },
+                                "MessagesPerSecond": {
+                                    "description": "The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is 20000.",
+                                    "type": "integer"
+                                },
+                                "Total": {
+                                    "description": "The maximum number of messages that an individual campaign can send to a single endpoint over the course of the campaign.",
+                                    "type": "integer"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "MessageConfiguration": {
+                            "description": "The message configuration settings.",
+                            "properties": {
+                                "ADMMessage": {
+                                    "description": "The message that the campaign delivers to ADM channels. Overrides the default message.",
+                                    "properties": {
+                                        "Action": {
+                                            "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                            "enum": [
+                                                "OPEN_APP",
+                                                "DEEP_LINK",
+                                                "URL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Body": {
+                                            "description": "The message body. Can include up to 140 characters.",
+                                            "type": "string"
+                                        },
+                                        "ImageIconUrl": {
+                                            "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageSmallIconUrl": {
+                                            "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageUrl": {
+                                            "description": "The URL that points to an image used in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "JsonBody": {
+                                            "description": "The JSON payload used for a silent push.",
+                                            "type": "string"
+                                        },
+                                        "MediaUrl": {
+                                            "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "RawContent": {
+                                            "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                            "type": "string"
+                                        },
+                                        "SilentPush": {
+                                            "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                            "type": "boolean"
+                                        },
+                                        "TimeToLive": {
+                                            "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                            "type": "integer"
+                                        },
+                                        "Title": {
+                                            "description": "The message title that displays above the message on the user's device.",
+                                            "type": "string"
+                                        },
+                                        "Url": {
+                                            "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "APNSMessage": {
+                                    "description": "The message that the campaign delivers to APNS channels. Overrides the default message.",
+                                    "properties": {
+                                        "Action": {
+                                            "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                            "enum": [
+                                                "OPEN_APP",
+                                                "DEEP_LINK",
+                                                "URL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Body": {
+                                            "description": "The message body. Can include up to 140 characters.",
+                                            "type": "string"
+                                        },
+                                        "ImageIconUrl": {
+                                            "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageSmallIconUrl": {
+                                            "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageUrl": {
+                                            "description": "The URL that points to an image used in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "JsonBody": {
+                                            "description": "The JSON payload used for a silent push.",
+                                            "type": "string"
+                                        },
+                                        "MediaUrl": {
+                                            "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "RawContent": {
+                                            "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                            "type": "string"
+                                        },
+                                        "SilentPush": {
+                                            "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                            "type": "boolean"
+                                        },
+                                        "TimeToLive": {
+                                            "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                            "type": "integer"
+                                        },
+                                        "Title": {
+                                            "description": "The message title that displays above the message on the user's device.",
+                                            "type": "string"
+                                        },
+                                        "Url": {
+                                            "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "BaiduMessage": {
+                                    "description": "The message that the campaign delivers to Baidu channels. Overrides the default message.",
+                                    "properties": {
+                                        "Action": {
+                                            "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                            "enum": [
+                                                "OPEN_APP",
+                                                "DEEP_LINK",
+                                                "URL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Body": {
+                                            "description": "The message body. Can include up to 140 characters.",
+                                            "type": "string"
+                                        },
+                                        "ImageIconUrl": {
+                                            "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageSmallIconUrl": {
+                                            "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageUrl": {
+                                            "description": "The URL that points to an image used in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "JsonBody": {
+                                            "description": "The JSON payload used for a silent push.",
+                                            "type": "string"
+                                        },
+                                        "MediaUrl": {
+                                            "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "RawContent": {
+                                            "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                            "type": "string"
+                                        },
+                                        "SilentPush": {
+                                            "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                            "type": "boolean"
+                                        },
+                                        "TimeToLive": {
+                                            "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                            "type": "integer"
+                                        },
+                                        "Title": {
+                                            "description": "The message title that displays above the message on the user's device.",
+                                            "type": "string"
+                                        },
+                                        "Url": {
+                                            "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "DefaultMessage": {
+                                    "description": "The default message for all channels.",
+                                    "properties": {
+                                        "Action": {
+                                            "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                            "enum": [
+                                                "OPEN_APP",
+                                                "DEEP_LINK",
+                                                "URL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Body": {
+                                            "description": "The message body. Can include up to 140 characters.",
+                                            "type": "string"
+                                        },
+                                        "ImageIconUrl": {
+                                            "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageSmallIconUrl": {
+                                            "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageUrl": {
+                                            "description": "The URL that points to an image used in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "JsonBody": {
+                                            "description": "The JSON payload used for a silent push.",
+                                            "type": "string"
+                                        },
+                                        "MediaUrl": {
+                                            "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "RawContent": {
+                                            "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                            "type": "string"
+                                        },
+                                        "SilentPush": {
+                                            "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                            "type": "boolean"
+                                        },
+                                        "TimeToLive": {
+                                            "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                            "type": "integer"
+                                        },
+                                        "Title": {
+                                            "description": "The message title that displays above the message on the user's device.",
+                                            "type": "string"
+                                        },
+                                        "Url": {
+                                            "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "EmailMessage": {
+                                    "description": "The email message configuration.",
+                                    "properties": {
+                                        "Body": {
+                                            "description": "The email text body.",
+                                            "type": "string"
+                                        },
+                                        "FromAddress": {
+                                            "description": "The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.",
+                                            "type": "string"
+                                        },
+                                        "HtmlBody": {
+                                            "description": "The email html body.",
+                                            "type": "string"
+                                        },
+                                        "Title": {
+                                            "description": "The email title (Or subject).",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "GCMMessage": {
+                                    "description": "The message that the campaign delivers to GCM channels. Overrides the default message.",
+                                    "properties": {
+                                        "Action": {
+                                            "description": "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+                                            "enum": [
+                                                "OPEN_APP",
+                                                "DEEP_LINK",
+                                                "URL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Body": {
+                                            "description": "The message body. Can include up to 140 characters.",
+                                            "type": "string"
+                                        },
+                                        "ImageIconUrl": {
+                                            "description": "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageSmallIconUrl": {
+                                            "description": "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
+                                            "type": "string"
+                                        },
+                                        "ImageUrl": {
+                                            "description": "The URL that points to an image used in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "JsonBody": {
+                                            "description": "The JSON payload used for a silent push.",
+                                            "type": "string"
+                                        },
+                                        "MediaUrl": {
+                                            "description": "A URL that refers to the location of an image or video that you want to display in the push notification.",
+                                            "type": "string"
+                                        },
+                                        "RawContent": {
+                                            "description": "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+                                            "type": "string"
+                                        },
+                                        "SilentPush": {
+                                            "description": "Indicates if the message should display on the users device.\n\nSilent pushes can be used for Remote Configuration and Phone Home use cases. ",
+                                            "type": "boolean"
+                                        },
+                                        "TimeToLive": {
+                                            "description": "This parameter specifies how long (in seconds) the message should be kept if the service is unable to deliver the notification the first time. If the value is 0, it treats the notification as if it expires immediately and does not store the notification or attempt to redeliver it. This value is converted to the expiration field when sent to the service. It only applies to APNs and GCM",
+                                            "type": "integer"
+                                        },
+                                        "Title": {
+                                            "description": "The message title that displays above the message on the user's device.",
+                                            "type": "string"
+                                        },
+                                        "Url": {
+                                            "description": "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "SMSMessage": {
+                                    "description": "The SMS message configuration.",
+                                    "properties": {
+                                        "Body": {
+                                            "description": "The SMS text body.",
+                                            "type": "string"
+                                        },
+                                        "MessageType": {
+                                            "description": "Is this is a transactional SMS message, otherwise a promotional message.",
+                                            "enum": [
+                                                "TRANSACTIONAL",
+                                                "PROMOTIONAL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "SenderId": {
+                                            "description": "Sender ID of sent message.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "Name": {
+                            "description": "The custom name of the campaign.",
+                            "type": "string"
+                        },
+                        "Schedule": {
+                            "description": "The campaign schedule.",
+                            "properties": {
+                                "EndTime": {
+                                    "description": "The scheduled time that the campaign ends in ISO 8601 format.",
+                                    "type": "string"
+                                },
+                                "EventFilter": {
+                                    "description": "Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.",
+                                    "properties": {
+                                        "Dimensions": {
+                                            "description": "An object that defines the dimensions for the event filter.",
+                                            "properties": {
+                                                "Attributes": {
+                                                    "description": "Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.",
+                                                    "items": {
+                                                        "properties": {
+                                                            "key": {
+                                                                "type": "string"
+                                                            },
+                                                            "value": {
+                                                                "description": "Custom attibute dimension",
+                                                                "properties": {
+                                                                    "AttributeType": {
+                                                                        "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                                        "enum": [
+                                                                            "INCLUSIVE",
+                                                                            "EXCLUSIVE"
+                                                                        ],
+                                                                        "type": "string"
+                                                                    },
+                                                                    "Values": {
+                                                                        "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                                        "items": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "type": "array"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "EventType": {
+                                                    "description": "The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon Pinpoint generates, such as _session.start, or a custom event that's specific to your app.",
+                                                    "properties": {
+                                                        "DimensionType": {
+                                                            "description": "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
+                                                            "enum": [
+                                                                "INCLUSIVE",
+                                                                "EXCLUSIVE"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "Values": {
+                                                            "description": "The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.",
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "Metrics": {
+                                                    "description": "Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.",
+                                                    "items": {
+                                                        "properties": {
+                                                            "key": {
+                                                                "type": "string"
+                                                            },
+                                                            "value": {
+                                                                "description": "Custom metric dimension",
+                                                                "properties": {
+                                                                    "ComparisonOperator": {
+                                                                        "description": "The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL",
+                                                                        "type": "string"
+                                                                    },
+                                                                    "Value": {
+                                                                        "description": "The value to be compared.",
+                                                                        "format": "double",
+                                                                        "type": "number"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "FilterType": {
+                                            "description": "The type of event that causes the campaign to be sent. Possible values:\n\nSYSTEM - Send the campaign when a system event occurs. See the System resource for more information.\n\nENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.",
+                                            "enum": [
+                                                "SYSTEM",
+                                                "ENDPOINT"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "Frequency": {
+                                    "description": "How often the campaign delivers messages.\n\nValid values:\n\nONCE\n\nHOURLY\n\nDAILY\n\nWEEKLY\n\nMONTHLY\n\nEVENT",
+                                    "enum": [
+                                        "ONCE",
+                                        "HOURLY",
+                                        "DAILY",
+                                        "WEEKLY",
+                                        "MONTHLY",
+                                        "EVENT"
+                                    ],
+                                    "type": "string"
+                                },
+                                "IsLocalTime": {
+                                    "description": "Indicates whether the campaign schedule takes effect according to each user's local time.",
+                                    "type": "boolean"
+                                },
+                                "QuietTime": {
+                                    "description": "The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet time.\n\nNote: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet time for your campaign. If your endpoints don't include this attribute, they'll receive the messages that you send them, even if quiet time is enabled.\n\nWhen you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you specified, as long as all of the following are true:\n- The endpoint includes a valid Demographic.Timezone attribute.\n- The current time in the endpoint's time zone is later than or equal to the time specified in the QuietTime.Start attribute for the campaign.\n- The current time in the endpoint's time zone is earlier than or equal to the time specified in the QuietTime.End attribute for the campaign.",
+                                    "properties": {
+                                        "End": {
+                                            "description": "The time at which quiet time should end. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.",
+                                            "type": "string"
+                                        },
+                                        "Start": {
+                                            "description": "The time at which quiet time should begin. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "StartTime": {
+                                    "description": "The scheduled time that the campaign begins in ISO 8601 format.",
+                                    "type": "string"
+                                },
+                                "Timezone": {
+                                    "description": "The starting UTC offset for the schedule if the value for isLocalTime is true\n\nValid values: \nUTC\nUTC+01\nUTC+02\nUTC+03\nUTC+03:30\nUTC+04\nUTC+04:30\nUTC+05\nUTC+05:30\nUTC+05:45\nUTC+06\nUTC+06:30\nUTC+07\nUTC+08\nUTC+09\nUTC+09:30\nUTC+10\nUTC+10:30\nUTC+11\nUTC+12\nUTC+13\nUTC-02\nUTC-03\nUTC-04\nUTC-05\nUTC-06\nUTC-07\nUTC-08\nUTC-09\nUTC-10\nUTC-11",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "SegmentId": {
+                            "description": "The ID of the segment to which the campaign sends messages.",
+                            "type": "string"
+                        },
+                        "SegmentVersion": {
+                            "description": "The version of the segment to which the campaign sends messages.",
+                            "type": "integer"
+                        },
+                        "TreatmentDescription": {
+                            "description": "A custom description for the treatment.",
+                            "type": "string"
+                        },
+                        "TreatmentName": {
+                            "description": "The custom name of a variation of the campaign used for A/B testing.",
+                            "type": "string"
+                        },
+                        "tags": {
+                            "description": "The Tags for the campaign.",
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "WriteCampaignRequest"
+            ],
+            "type": "object"
+        },
+        "application_id": {
+            "required": true,
+            "type": "string"
+        },
+        "campaign_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
